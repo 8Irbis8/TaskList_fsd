@@ -1,0 +1,80 @@
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.card:focus {
+  outline: 2px solid #1976d2;
+  outline-offset: 2px;
+}
+
+.card.completed {
+  border-color: #4caf50;
+  background-color: #f8fff8;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333333;
+  line-height: 1.4;
+}
+
+.card.completed .title {
+  color: #666666;
+  text-decoration: line-through;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.statusIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.statusIcon.checked {
+  background-color: #4caf50;
+  color: #ffffff;
+}
+
+.statusIcon.unchecked {
+  border: 2px solid #ff9800;
+  color: #ff9800;
+}
+
+.statusText {
+  font-size: 14px;
+  color: #666666;
+  font-weight: 500;
+}
+
+.card.completed .statusText {
+  color: #4caf50;
+}
