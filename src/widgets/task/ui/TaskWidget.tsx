@@ -1,5 +1,8 @@
-import React from 'react';
+// импорт по заданию
+/* eslint-disable @conarti/feature-sliced/layers-slices */
 import { TaskList } from 'widgets/taskList';
+
+import React from 'react';
 
 import classes from './TaskWidget.module.css';
 

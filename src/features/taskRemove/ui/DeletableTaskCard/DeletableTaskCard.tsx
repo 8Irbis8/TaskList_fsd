@@ -1,5 +1,5 @@
-import { TaskCard } from 'entities/Task';
-import type { Task } from 'entities/Task';
+import { TaskCard } from 'entities/task';
+import type { Task } from 'entities/task';
 import { DeleteButton } from 'shared/ui/DeleteButton/DeleteButton';
 
 import React, { useCallback } from 'react';

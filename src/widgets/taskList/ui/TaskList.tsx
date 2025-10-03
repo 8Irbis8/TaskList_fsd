@@ -1,12 +1,12 @@
-import type { Task } from 'entities/Task';
+import type { Task } from 'entities/task';
 import { DeletableTaskCard } from 'features/taskRemove';
 import { FilterButton } from 'shared/ui/FilterButton/FilterButton';
 
 import React, { useEffect } from 'react';
 
-import { FILTER_TYPES } from '../lib/constants';
 import { useTaskList } from '../lib/hooks';
 import { toFilterType } from '../lib/utils';
+import { FILTER_TYPES } from '../model/constants';
 import { FILTER_OPTIONS } from '../model/constants';
 import type { FilterType } from '../model/types';
 import classes from './TaskList.module.css';

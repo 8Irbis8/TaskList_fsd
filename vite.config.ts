@@ -14,6 +14,13 @@ export default defineConfig({
     emptyOutDir: true,
   },
 
+  server: {
+    allowedHosts: [
+      '284y29-5173.csb.app',
+      '.csb.app', // разрешает все поддомены csb.app
+    ],
+  },
+
   resolve: {
     alias: {
       '@': path.resolve(process.cwd(), 'src'),
