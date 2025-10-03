@@ -13,8 +13,7 @@ export interface TaskCardProps {
  * Презентационный компонент карточки задачи
  * Отображает заголовок и статус задачи
  */
-export const TaskCard: React.FC<TaskCardProps> = ({ title, completed }) => {
-  console.log('render');
+const TaskCardComponent: React.FC<TaskCardProps> = ({ title, completed }) => {
   return (
     <div className={`${classes.card} ${completed ? classes.completed : ''}`} role='button'>
       <div className={classes.content}>
@@ -32,4 +31,4 @@ export const TaskCard: React.FC<TaskCardProps> = ({ title, completed }) => {
   );
 };
 
-
+export const TaskCard = React.memo(TaskCardComponent);
