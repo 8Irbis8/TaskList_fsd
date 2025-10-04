@@ -60,7 +60,6 @@ const mock: Task[] = [
 
 export const useTaskList = () => {
   const [allTasks, setAllTasks] = useState<Task[]>(mock);
-  const [filteredTasks, setFilteredTasks] = useState<Task[]>(mock);
   const [filter, setFilter] = useState<FilterType>(FILTER_TYPES.ALL);
 
   const incompleteTasks: Task[] = useMemo(
@@ -69,20 +68,19 @@ export const useTaskList = () => {
   );
   const completedTasks: Task[] = useMemo(() => allTasks.filter(task => task.completed), [allTasks]);
 
-  useEffect(() => {
-    let filteredTasks: Task[];
+  const filteredTasks: Task[] = useMemo(() => {
+    let filteredTasksNew: Task[];
     switch (filter) {
       case FILTER_TYPES.INCOMPLETE:
-        filteredTasks = incompleteTasks;
+        filteredTasksNew = incompleteTasks;
         break;
       case FILTER_TYPES.COMPLETED:
-        filteredTasks = completedTasks;
+        filteredTasksNew = completedTasks;
         break;
       default:
-        filteredTasks = allTasks;
+        filteredTasksNew = allTasks;
     }
-
-    setFilteredTasks(filteredTasks);
+    return filteredTasksNew;
   }, [incompleteTasks, completedTasks, allTasks, filter]);
 
   const handleSetFilter = useCallback((newFilter: FilterType) => {
