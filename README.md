@@ -7,7 +7,7 @@ A training project for the SberUniversity advanced React course. A task list app
 Действия: смена фильтра, удаление карточки.
 <br/>
 До:
-<img width="1920" height="1080" alt="2025-10-12_12-56-57" src="https://github.com/user-attachments/assets/feee19d1-3a9e-4a66-b11d-0ff7aa3a751d" />
+<img width="1858" height="976" alt="до оптимизации" src="https://github.com/user-attachments/assets/ea5eea50-a90d-48f6-9c6e-3b8a2aaa1b77" />
 После:
 <img width="1751" height="876" alt="2025-10-04_23-14-20" src="https://github.com/user-attachments/assets/4736632b-22b3-47d3-966d-38e02d9160a9" />
 
