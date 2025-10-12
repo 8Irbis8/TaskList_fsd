@@ -2,7 +2,7 @@ import type { Task } from 'entities/task';
 import { DeletableTaskCard } from 'features/taskRemove';
 import { FilterButton } from 'shared/ui/FilterButton/FilterButton';
 
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 
 import { useTaskList } from '../lib/hooks';
 import { toFilterType } from '../lib/utils';
@@ -22,10 +22,10 @@ export const TaskList: React.FC = () => {
     }
   }, [currentFilter, filter, setFilter]);
 
-  const handleFilterChange = (filter: FilterType | string) => {
+  const handleFilterChange = useCallback((filter: FilterType | string) => {
     const typedFilter = toFilterType(filter);
     setCurrentFilter(typedFilter);
-  };
+  },[]);
 
   return (
     <div className={`${classes.container}`}>
