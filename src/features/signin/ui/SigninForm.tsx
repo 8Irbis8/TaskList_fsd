@@ -1,5 +1,5 @@
 import React from 'react';
-import { useForm, useFieldArray } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
   Box,
@@ -37,30 +37,14 @@ export const SignInForm: React.FC<SignInFormProps> = ({
     },
   });
 
-  const { fields, append, remove } = useFieldArray({
-    control,
-    name: 'socialLinks',
-  });
-
-  const addSocialLink = () => {
-    append({ url: '' });
-  };
-
-  const removeSocialLink = (index: number) => {
-    remove(index);
-  };
-
   return (
-    <Paper elevation={3} sx={{ padding: 4, maxWidth: 500, width: '100%' }}>
+    <Paper elevation={2} sx={{ padding: 3, maxWidth: 500, width: '100%' }}>
       <Box
         component="form"
         onSubmit={handleSubmit(onSubmit)}
         sx={{ display: 'flex', flexDirection: 'column' }}
       >
-        <Typography variant="h4" component="h1" gutterBottom align="center">
-          Регистрация
-        </Typography>
-        
+       <Typography align={'center'}> Регистрация</Typography>
         {/* Основные поля */}
         <TextField
           label="Имя пользователя"
@@ -94,7 +78,7 @@ export const SignInForm: React.FC<SignInFormProps> = ({
           placeholder="Повторите пароль"
         />
 
-        <Divider sx={{ my: 3 }} />
+        <Divider sx={{ my: 1 }} />
 
         {/* Социальные ссылки */}
         <SocialLinks 
@@ -110,7 +94,7 @@ export const SignInForm: React.FC<SignInFormProps> = ({
           disabled={isLoading}
           variant="contained"
           size="large"
-          sx={{ mt: 3 }}
+          sx={{ mt: 2 }}
           startIcon={isLoading ? <CircularProgress size={20} /> : null}
         >
           {isLoading ? 'Регистрация...' : 'Зарегистрироваться'}

@@ -54,12 +54,12 @@ export const SignInPage: React.FC = () => {
       <Container component="main" maxWidth="sm">
         <Box
           sx={{
-            minHeight: '100vh',
+            minHeight: '100%',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-            py: 4,
+            py: 3,
           }}
         >
           <SignInForm 

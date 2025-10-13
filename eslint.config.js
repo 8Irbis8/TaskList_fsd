@@ -63,6 +63,7 @@ export default tseslint.config(
           features: 'src/features',
           entities: 'src/entities',
           shared: 'src/shared',
+          layouts:'src/layouts',
         },
       },
     },
