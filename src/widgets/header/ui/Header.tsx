@@ -26,6 +26,12 @@ export const Header: React.FC = () => {
         >
           Подписка
         </Link>
+        <Link 
+          to="/refExamples" 
+          className={`${styles.link} ${location.pathname === '/refExamples' ? styles.active : ''}`}
+        >
+          Дз по React.useRef
+        </Link>
       </nav>
     </header>
   );
