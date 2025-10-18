@@ -31,6 +31,8 @@
         "features/*": ["features/*"],
   
         "widgets/*": ["widgets/*"],
+        
+        "layouts/*": ["layouts/*"],
   
         "pages/*": ["pages/*"],
   
