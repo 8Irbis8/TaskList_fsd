@@ -19,6 +19,7 @@
       "^@pages/(.*)$",
       "^@widgets/(.*)$",
       "^@features/(.*)$",
+      "^@layouts/(.*)$",
       "^@entities/(.*)$",
       "^@shared/(.*)$",
       "^[./]"

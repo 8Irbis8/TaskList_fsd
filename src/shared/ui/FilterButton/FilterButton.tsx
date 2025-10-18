@@ -13,7 +13,7 @@ export interface FilterButtonProps {
  * Кнопка-переключатель фильтра задач
  * Позволяет переключаться между режимами отображения задач
  */
-export const FilterButton: React.FC<FilterButtonProps> = ({
+ const FilterButtonComponent: React.FC<FilterButtonProps> = ({
   filterOptions,
   currentFilter,
   onFilterChange,
@@ -38,3 +38,4 @@ export const FilterButton: React.FC<FilterButtonProps> = ({
   );
 };
 
+export const FilterButton = React.memo(FilterButtonComponent);

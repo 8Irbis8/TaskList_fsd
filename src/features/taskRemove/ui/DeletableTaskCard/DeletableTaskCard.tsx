@@ -11,7 +11,7 @@ export interface DeletableTaskCardProps {
   onClickDelete: (id: string) => void;
 }
 
-export const DeletableTaskCard: React.FC<DeletableTaskCardProps> = ({ task, onClickDelete }) => {
+const DeletableTaskCardComponent: React.FC<DeletableTaskCardProps> = ({ task, onClickDelete }) => {
   const handleDeleteMemo = useCallback(() => {
     onClickDelete(task.id);
   }, [task?.id, onClickDelete]);
@@ -23,3 +23,5 @@ export const DeletableTaskCard: React.FC<DeletableTaskCardProps> = ({ task, onCl
     </div>
   );
 };
+
+export const DeletableTaskCard = React.memo(DeletableTaskCardComponent);
