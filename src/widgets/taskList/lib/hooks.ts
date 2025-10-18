@@ -1,6 +1,6 @@
 import type { Task } from 'entities/Task';
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import { FILTER_TYPES } from '../model/constants';
 import { type FilterType } from '../model/types';
