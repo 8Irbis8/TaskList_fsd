@@ -2,7 +2,7 @@ import { useActionState } from "react";
 import type {FC} from 'react';
 import styles from './SubscriptionWizard.module.css';
 
-const submitAction = async (prevState: any, formData: FormData) => {
+const submitAction = async (prevState: { step: number, email: string}, formData: FormData) => {
   const email = formData.get('email') as string;
   const step = prevState?.step || 1;
 
