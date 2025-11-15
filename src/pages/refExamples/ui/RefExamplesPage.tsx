@@ -1,16 +1,11 @@
-import React, { useState } from 'react';
-import { Tabs, Tab, Container } from '@mui/material';
+import React from 'react';
 import { WebSocketLogger } from 'features/refExamples/WebSocketLogger';
 import { ClickTimer, PreviousInput, FocusTracker, DebouncedLogger } from 'features/refExamples';
-import TabPanel from 'shared/ui/TabPanel/TabPanel';
+
+import { ExamplesTabs, type Example } from 'entities/examples/ExamplesTabs';
 
 
-interface Assignment {
-  title: string;
-  component: React.ReactNode;
-}
-
-const assignments: Assignment[] = [
+const examples: Example[] = [
   {
     title: 'Click Timer',
     component: <ClickTimer />
@@ -35,25 +30,7 @@ const assignments: Assignment[] = [
 
 
 export const RefExamplesPage: React.FC = () => {
-  const [currentTab, setCurrentTab] = useState(0);
-
-  const handleTabChange = (_event: React.SyntheticEvent, newValue: number) => {
-    setCurrentTab(newValue);
-  };
-
   return (
-    <Container maxWidth="lg">
-        <Tabs value={currentTab} onChange={handleTabChange} centered>
-          {assignments.map((assignment, index) => (
-            <Tab key={index} label={assignment.title} />
-          ))}
-        </Tabs>
-
-      {assignments.map((assignment, index) => (
-        <TabPanel key={index} value={currentTab} index={index}>
-          {assignment.component}
-        </TabPanel>
-      ))}
-    </Container>
+   <ExamplesTabs examples={examples} />
   );
 };
