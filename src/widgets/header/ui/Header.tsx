@@ -32,6 +32,12 @@ export const Header: React.FC = () => {
         >
           Дз по React.useRef
         </Link>
+            <Link 
+          to="/react19Examples" 
+          className={`${styles.link} ${location.pathname === '/react19Examples' ? styles.active : ''}`}
+        >
+          Дз по React19
+        </Link>
       </nav>
     </header>
   );
