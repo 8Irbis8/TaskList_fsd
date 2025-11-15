@@ -1,15 +1,11 @@
 import React from 'react';
 import { WebSocketLogger } from 'features/refExamples/WebSocketLogger';
 import { ClickTimer, PreviousInput, FocusTracker, DebouncedLogger } from 'features/refExamples';
-import { ExamplesTabs } from 'entities/examples/ExamplesTabs/ExamplesTabs';
+
+import { ExamplesTabs, type Example } from 'entities/examples/ExamplesTabs';
 
 
-interface Assignment {
-  title: string;
-  component: React.ReactNode;
-}
-
-const examples: Assignment[] = [
+const examples: Example[] = [
   {
     title: 'Click Timer',
     component: <ClickTimer />

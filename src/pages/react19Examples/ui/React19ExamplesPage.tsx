@@ -2,15 +2,11 @@ import React from 'react';
 import FormWithAsyncSave from 'features/react19Examples/FormWithAsyncSave';
 import TodoListOptimistic from 'features/react19Examples/ToDoListOptimistic';
 import ActionStateWithReducer from 'features/react19Examples/ActionStateWithReducer';
-import { ExamplesTabs } from 'entities/examples/ExamplesTabs/ExamplesTabs';
+import { ExamplesTabs, type Example } from 'entities/examples/ExamplesTabs';
 
 
-interface Examples {
-  title: string;
-  component: React.ReactNode;
-}
 
-const examples: Examples[] = [
+const examples: Example[] = [
   {
     title: 'Form With Async Save',
     component: <FormWithAsyncSave />

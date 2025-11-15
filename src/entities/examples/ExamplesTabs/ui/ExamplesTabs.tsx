@@ -1,11 +1,7 @@
 import { useState } from 'react';
 import { Tabs, Tab, Container } from '@mui/material';
 import TabPanel from 'shared/ui/TabPanel/TabPanel';
-
-interface Example {
-  title: string;
-  component: React.ReactNode;
-}
+import type { Example } from '../model/types';
 
 interface ExamplesTabsProps {
   examples: Example[];
