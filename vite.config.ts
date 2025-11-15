@@ -3,7 +3,13 @@ import path from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react({
+      babel: {
+        plugins: [['babel-plugin-react-compiler']],
+      },
+    })
+  ],
 
   root: './src',
 
@@ -14,10 +20,11 @@ export default defineConfig({
     emptyOutDir: true,
   },
 
+  //для CodeSandBox
   server: {
     allowedHosts: [
       '284y29-5173.csb.app',
-      '.csb.app', // разрешает все поддомены csb.app
+      '.csb.app',
     ],
   },
 
@@ -34,10 +41,17 @@ export default defineConfig({
     },
   },
 
-  // CSS настройки
   css: {
     modules: {
       localsConvention: 'camelCase',
     },
+  },
+
+  // React Compiler конфигурация
+  define: {
+    'process.env.REACT_COMPILER_OPTIONS': JSON.stringify({
+      compilationMode: 'all',
+      runtimeModule: 'react/compiler-runtime',
+    }),
   },
 });
